@@ -1,0 +1,60 @@
+nav{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    background-color: rgb(49, 44, 44);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+li{
+    list-style: none;
+}
+nav>li>a{
+    font-size: 1.3rem;
+    font-weight: 600;
+color: white;
+text-decoration: none;
+
+}
+nav>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    margin-bottom: none;
+}
+nav div>a{
+    color: white;
+    text-decoration: none;
+}
+aside{
+    padding: 5rem 1rem 1.5rem;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: column;
+    position: fixed;
+    min-height: 100vh;
+    box-shadow: 1px 1px 5px  rgb(49, 44, 44);
+    transition: .5s all;
+}
+aside>a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 600;
+}
+
+main{
+    width: calc(100% - 250px);
+    /* background-color: red; */
+    padding: 5rem 2rem 1.5rem;
+    height: 100vh;
+    float: right;
+
+    transition: .5s all;
+}

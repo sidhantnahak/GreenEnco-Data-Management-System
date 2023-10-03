@@ -1,0 +1,18 @@
+form{
+    
+    max-width: 1100px;
+    margin: 0 auto;
+    padding:  2rem 3rem;
+    background-color: rgb(58 54 54);
+    background-color: whitesmoke;
+    border-radius: 14px;
+
+}
+form label{
+    padding: 0.5rem 0;
+    font-weight: 600;
+    /* color: white; */
+}
+form>input{
+    background-color: rgb(180, 177, 177);
+}
