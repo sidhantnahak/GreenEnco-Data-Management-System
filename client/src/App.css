@@ -4,3 +4,8 @@
   box-sizing: border-box;
   
 }
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
+}
+.modal-backdrop {display: none;}

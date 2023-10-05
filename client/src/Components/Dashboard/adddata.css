@@ -10,9 +10,12 @@ form{
 }
 form label{
     padding: 0.5rem 0;
+    padding-left: 0.2rem;
     font-weight: 600;
+    font-size: 0.9rem;
     /* color: white; */
 }
 form>input{
     background-color: rgb(180, 177, 177);
 }
+

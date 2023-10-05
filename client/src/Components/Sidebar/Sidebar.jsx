@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, {  useState } from 'react'
 import { Link } from 'react-router-dom'
 import './sidebar.css'
-import Main from './Main'
+import Main from '../Dashboard/Main'
+import Footer from '../Footer/Footer'
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true)
@@ -19,18 +20,22 @@ const Sidebar = () => {
                 </div>
             </nav>
 
-            <aside style={{marginLeft:open?"0px":"-250px" }}  >
-                <Link to='/contents'>Dashboard</Link>
+            <aside style={{ marginLeft: open ? "0px" : "-250px" }}  >
+                <Link to='/dashboard'> Dashboard</Link>
                 <Link to='/add-data'> Add Data</Link>
-                <Link to='/pichart'>Pi Chart</Link>
+
+                <Link to="chart/pie-chart">Pie Chart</Link>
+                <Link to="chart/bar-chart"  >Bar Chart</Link>
+                <Link  to="chart/line-chart" >Line Chart</Link>
             </aside>
 
-            <main style={{ width: !open && "100%" }}>
-                {/* {child} */}
-                <Main/>
-            </main>
-            {/* <Main open={open} /> */}
+           <main style={{ width: !open && "100%" }}>
+                <Main  />
 
+            </main>
+           
+            <Footer open={open} />
+    
         </>
     )
 }

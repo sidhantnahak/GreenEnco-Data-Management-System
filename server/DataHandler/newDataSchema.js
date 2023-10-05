@@ -75,4 +75,4 @@ const dataSchema=new mongoose.Schema({
     }
 })
 
-module.exports=mongoose.model("Date",dataSchema);
+module.exports=mongoose.model("Data",dataSchema);

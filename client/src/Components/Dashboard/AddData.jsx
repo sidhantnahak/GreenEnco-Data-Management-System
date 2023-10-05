@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './adddata.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { adddata_request, clearErrors } from '../../Redux/dataAction'
+import { adddata, clearErrors, getall_data } from '../../Redux/dataAction'
 import { add_data_reset } from '../../Redux/Constants'
 import Lodor from '../Lodor/Lodor'
 import { useAlert } from 'react-alert'
@@ -18,19 +18,19 @@ const AddData = () => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
 
-
     const onsubmitHandler = (e) => {
         e.preventDefault();
-        dispatch(adddata_request(data))
+        dispatch(adddata(data))
     }
 
     useEffect(() => {
         if (error) {
-            alert.success(error);
+            alert.error(error);
             dispatch(clearErrors());
         }
         if (sucess) {
             alert.success("data added sucessfully")
+            dispatch(getall_data())
             dispatch({ type: add_data_reset })
         }
 
@@ -41,7 +41,7 @@ const AddData = () => {
         <>
             {loading ? <Lodor /> :
 
-                <div>
+                <div style={{minHeight:"100vh"}}>
                     <form className='shadow' onSubmit={onsubmitHandler}>
                         <div className="row">
                             <div className="col-lg-8 mb-2">
@@ -52,75 +52,63 @@ const AddData = () => {
                                 <label htmlFor="month_year">Enter Date</label>
                                 <input type="month" name='month_year' id='month_and_year' className="form-control" value={data.month_year} onChange={onchangeHandler} required />
                             </div>
-                            <div className="col-lg-4 mb-2">
+                            <div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="PVSYST_GHI"> PVSYST GHI</label>
-                                <input name='PVSYST_GHI' type="number" className="form-control" id='PVSYST_GHI' onChange={onchangeHandler} required />
+                                <input name='PVSYST_GHI' type="number" className="form-control" id='PVSYST_GHI' onChange={onchangeHandler} required step="any" />
                             </div>
-                            <div className="col-lg-4 mb-2">
+                            <div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="PVSYST_GTI">PVSYST GTI</label>
-                                <input type="number" name='PVSYST_GTI' className="form-control" id='PVSYST_GTI' onChange={onchangeHandler} required />
+                                <input type="number" name='PVSYST_GTI' className="form-control" id='PVSYST_GTI' onChange={onchangeHandler} required step="any" />
                             </div>
-                            <div className="col-lg-4 mb-2">
+                            <div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="PVSYST_Energy">PVSYST Energy</label>
-                                <input type="number" name='PVSYST_Energy' className="form-control" id='PVSYST_Energy' onChange={onchangeHandler} required />
+                                <input type="number" name='PVSYST_Energy' className="form-control" id='PVSYST_Energy' onChange={onchangeHandler} required step="any" />
                             </div>
-                            <div className="col-lg-4 mb-2">
+                            <div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Contractual_Energy">Contractual Energy</label>
-                                <input type="number" name='Contractual_Energy' className="form-control" id='Contractual_Energy' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='Contractual_Energy' className="form-control" id='Contractual_Energy' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Actual_GTI">Actual GTI</label>
-                                <input type="number" name='Actual_GTI' className="form-control" id='Actual_GTI' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='Actual_GTI' className="form-control" id='Actual_GTI' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Actual_GHI">Actual GHI</label>
-                                <input type="number" name='Actual_GHI' className="form-control" id='Actual_GHI' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='Actual_GHI' className="form-control" id='Actual_GHI' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="PVSyst_GTI_Actual_GTI">PVSyst GTI vs Actual GTI</label>
-                                <input type="number" name='PVSyst_GTI_Actual_GTI' className="form-control" id='PVSyst_GTI_Actual_GTI' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='PVSyst_GTI_Actual_GTI' className="form-control" id='PVSyst_GTI_Actual_GTI' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="PVSyst_GHI_Actual_GHI">PVSyst GHI vs Actual GHI</label>
-                                <input type="number" name='PVSyst_GHI_Actual_GHI' className="form-control" id='PVSyst_GHI_Actual_GHI' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='PVSyst_GHI_Actual_GHI' className="form-control" id='PVSyst_GHI_Actual_GHI' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="PVSyst_Energy_Contractual_Energy">PVSyst Energy vs Contractual Energy</label>
-                                <input type="number" name='PVSyst_Energy_Contractual_Energy' className="form-control" id='PVSyst_Energy_Contractual_Energy' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='PVSyst_Energy_Contractual_Energy' className="form-control" id='PVSyst_Energy_Contractual_Energy' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="T_Cell_Avg">T -Cell Avg(°C)</label>
-                                <input type="number" name='T_Cell_Avg' className="form-control" id='T_Cell_Avg' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='T_Cell_Avg' className="form-control" id='T_Cell_Avg' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Actual_Inverter_Energy">Actual Inverter Energy (KWh)</label>
-                                <input type="number" name='Actual_Inverter_Energy' className="form-control" id='Actual_Inverter_Energy' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-4 mb-2">
+                                <input type="number" name='Actual_Inverter_Energy' className="form-control" id='Actual_Inverter_Energy' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Actual_Export_Energy">Actual Export Energy (KWh)</label>
-                                <input type="number" name='Actual_Export_Energy' className="form-control" id='Actual_Export_Energy' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-3 mb-2">
+                                <input type="number" name='Actual_Export_Energy' className="form-control" id='Actual_Export_Energy' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Actual_Import_Energy">Actual Import Energy (KWh)</label>
-                                <input type="number" name='Actual_Import_Energy' className="form-control" id='Actual_Import_Energy' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-3 mb-2">
+                                <input type="number" name='Actual_Import_Energy' className="form-control" id='Actual_Import_Energy' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-2 col-md-6 mb-2">
                                 <label htmlFor="AC_loss">AC loss (%)</label>
-                                <input type="number" name='AC_loss' className="form-control" id='AC_loss' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-3 mb-2">
+                                <input type="number" name='AC_loss'  className="form-control" id='AC_loss' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-2 col-md-6 mb-2">
                                 <label htmlFor="Net_Energy">Net Energy</label>
-                                <input type="number" name='Net_Energy' className="form-control" id='Net_Energy' onChange={onchangeHandler} required />
-                            </div><div className="col-lg-3 mb-2">
+                                <input type="number" name='Net_Energy' className="form-control" id='Net_Energy' onChange={onchangeHandler} required step="any" />
+                            </div><div className="col-lg-4 col-md-6 mb-2">
                                 <label htmlFor="Normalised_Energy">Normalised Energy (KWh)</label>
-                                <input type="number" name='Normalised_Energy' className="form-control" id='Normalised_Energy' onChange={onchangeHandler} required />
+                                <input type="number" name='Normalised_Energy' className="form-control" id='Normalised_Energy'  onChange={onchangeHandler} required step="any" />
                             </div>
                         </div>
                         <button type='submit' className='btn btn-primary mt-3'>Add Data</button>
                     </form>
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-            }
+             } 
         </>
     )
 }

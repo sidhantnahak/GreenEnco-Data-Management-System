@@ -52,9 +52,12 @@ aside>a{
 main{
     width: calc(100% - 250px);
     /* background-color: red; */
-    padding: 5rem 2rem 1.5rem;
-    height: 100vh;
+    padding: 5rem 1rem;
+    /* height: 100vh; */
     float: right;
+    /* position: fixed;
+    right: 0; */
 
     transition: .5s all;
 }
+

@@ -1,0 +1,16 @@
+#table{
+    background-color: black;
+    color: white;
+}
+#table th,tr,td{
+    padding: 0 1rem;
+}
+#table th{
+    padding: 0.5rem 1rem;
+    
+}
+#table th,td,tr{
+   text-align: center;
+   border: 3px solid rgb(58, 55, 55) !important;
+    
+}

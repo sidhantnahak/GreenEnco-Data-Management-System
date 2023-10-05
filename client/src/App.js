@@ -11,14 +11,13 @@ function App() {
 
   const {error}=useSelector(state=>state.alldata)
   
-
   useEffect(() => {
     dispatch(getall_data())
     if(error){
       dispatch(clearErrors())
     }
     
-  }, [])
+  }, [dispatch])
   
   return (
     <>
