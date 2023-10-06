@@ -35,10 +35,10 @@ const Data = ({ data, index,convertDate }) => {
                 <td>{data.Net_Energy}</td>
                 <td>{data.Normalised_Energy}</td>
                 <td>
-                    <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.2rem" }}>
-                        <Link onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-eye  text-decoration-none fs-4 text-white"data-toggle="modal" data-target="#exampleModalLong" ></Link>
+                    <span id='data_action_links' style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.2rem" }}>
+                        <Link style={style} onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-eye  text-decoration-none fs-4 text-white hover-pulse"data-toggle="modal" data-target="#exampleModalLong" ></Link>
                         <Link  onClick={()=>dispatch(get_data_details(data._id))}  className="fa-solid fa-pen-to-square text-decoration-none fs-4 text-white" data-toggle="modal" data-target="#exampleModalLong2"></Link>
-                        <Link onClick={()=>dispatch(delete_data(data._id))} className="fa-solid fa-trash text-decoration-none fs-4 text-white"></Link>
+                        <Link onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-trash text-decoration-none fs-4 text-white" data-toggle="modal" data-target="#exampleModalCenter"></Link>
                     </span>
                 </td>
             </tr>

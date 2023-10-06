@@ -4,7 +4,7 @@ import Lodor from '../Lodor/Lodor';
 import Data from './Data';
 import './dashboard.css'
 import { useAlert } from 'react-alert';
-import { clearErrors, getall_data, update_data } from '../../Redux/dataAction';
+import { clearErrors, delete_data, getall_data, update_data } from '../../Redux/dataAction';
 import { useNavigate } from 'react-router-dom';
 import { delete_data_reset, update_data_reset } from '../../Redux/Constants';
 
@@ -59,13 +59,13 @@ const Dashboard = () => {
             dispatch(getall_data());
         }
     }, [data, error, navigate, dispatch,isUpdated,alert,isDeleted])
-
+console.log(loading)
     return (
 
         <>
             {loading ? <Lodor /> :
 
-                <div style={{minHeight:"100vh"}}>
+                <div className='px-1'>
                 <h2 className='text-center'>All Data Sets</h2>
                     {alldata && alldata.length > 0 ? <div style={{ minWidth: "100%", overflowX: "scroll" }} className='p-3 border border-2'>
 
@@ -148,6 +148,31 @@ const Dashboard = () => {
                     </div> }
                 </div>  
             </div>
+
+
+            {/* Delete */}
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <span style={{fontWeight:"600"}} className='text-danger '>Are You Sure Want to Delete This Data</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+        <button onClick={()=>dispatch(delete_data(data._id))} type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 
             {/* Update */}
 

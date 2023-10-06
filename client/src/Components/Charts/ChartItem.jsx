@@ -18,8 +18,8 @@ const ChartItem = ({ details, label1, label2, type }) => {
                     "& quot; #ecf0f1",
                     "#50AF95",
                     "#f3ba2f",
-                    "#2a71d0",
-                    "#2a61d0",
+                    "#00FFFF",
+                    "#FF8C00",
                     "#2a51d0",
                 ],
                 borderColor: "black",
@@ -38,13 +38,10 @@ const ChartItem = ({ details, label1, label2, type }) => {
                 label: "Users Gained",
                 data: label2.map((data) => details[data]),
                 backgroundColor: [
-                    "rgba(75,192,192,1)",
-                    "& quot; #ecf0f1",
-                    "#50AF95",
-                    "#f3ba2f",
-                    "#2a71d0",
-                    "#2b91d0",
-                    "#2c51d0",
+                    "#00FA9A",
+                    "#87CEEB",
+                    "#708090",
+                    "#D2B48C"
                 ],
                 borderColor: "black",
                 borderWidth: 1
@@ -74,7 +71,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
             <div className='row justify-content-center align-items-center gap-5 mb-5 '>
                 {type == "Pie" &&
                     <>
-                        <div className="col-md-5 col-s-12 text-center">
+                        <div style={{maxWidth:"400px"}} className=" chart-container col-xl-4 col-12 text-center">
                             <Pie className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
                                 options={{
@@ -89,10 +86,10 @@ const ChartItem = ({ details, label1, label2, type }) => {
                             />
                         </div>
 
-                        <h3 className='col-md-1  text-center' >{convertDate(details.date)} </h3>
+                        <h3 className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
 
-                        <div className="col-md-5 col-s-12 text-center">
-                            <Pie className=' rounded-lg bg-[whitesmoke]'
+                        <div style={{maxWidth:"400px"}} className="chart-container col-xl-4 col-12 text-center">
+                            <Pie className=' rounded-lg bg-[whitesmoke] text-center'
                                 data={chartData2}
                                 options={{
                                     plugins: {
@@ -112,7 +109,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
 {type == "Bar" &&
                     <>
-                        <div className="col-md-5 text-center">
+                        <div className="col-xl-5 col-12 text-center">
                             <Bar className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
                                 options={{
@@ -128,9 +125,9 @@ const ChartItem = ({ details, label1, label2, type }) => {
                             />
                         </div>
 
-                        <h3 className='col-md-1 text-center' >{convertDate(details.date)} </h3>
+                        <h3 className='col-xl-1 col-12 text-center' >{convertDate(details.date)} </h3>
 
-                        <div className="col-md-5 text-center">
+                        <div className="col-xl-5 col-12 text-center">
                             <Bar className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData2}
                                 options={{
@@ -153,7 +150,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
 {type == "Line" &&
                     <>
-                        <div className="col-md-5 text-center">
+                        <div className="col-xl-5 col-12 text-center">
                             <Line className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
                                 options={{
@@ -169,9 +166,9 @@ const ChartItem = ({ details, label1, label2, type }) => {
                             />
                         </div>
 
-                        <h3 className='col-md-1 text-center' >{convertDate(details.date)} </h3>
+                        <h3 className='col-xl-1 col-12 text-center' >{convertDate(details.date)} </h3>
 
-                        <div className="col-md-5 text-center">
+                        <div className="col-xl-5 col-12 text-center">
                             <Line className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData2}
                                 options={{

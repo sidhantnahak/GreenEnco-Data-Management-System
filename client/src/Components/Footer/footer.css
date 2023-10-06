@@ -35,29 +35,24 @@
 }
 
 
-/* .footer_div>:last-child>a:hover{
+.footer_div>:last-child>a:hover{
     scale: 1.5;
-    color: red;
     
-} */
+}
 
 .footer_div>:last-child>:first-child:hover{
-    scale: 1.5;
     color: #0866FF;
 }
 .footer_div>:last-child>:nth-child(2):hover{
-    scale: 1.5;
+ 
     color: #00acee;
 }
 .footer_div>:last-child>:nth-child(3):hover{
-    scale: 1.5;
     color: red;
 }
 .footer_div>:last-child>:nth-child(4):hover{
-    scale: 1.5;
     color: #0072b1 ;
 }.footer_div>:last-child>:nth-child(5):hover{
-    scale: 1.5;
     color: #4078c0;
 }
 

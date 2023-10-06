@@ -14,9 +14,9 @@ const Sidebar = () => {
             <nav>
                 <li><Link>GreenEnco Pvt. Limited </Link><Link onClick={() => open ? setOpen(false) : setOpen(true)} style={{ position: "relative", top: "3px", left: "7px" }} className={open ? `fa-solid fa-bars` : "fa-solid fa-bars-staggered"}></Link></li>
                 <div>
-                    <Link>Home</Link>
-                    <Link>About</Link>
-                    <Link>Contact</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/contact">Contact</Link>
                 </div>
             </nav>
 

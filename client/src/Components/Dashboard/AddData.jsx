@@ -41,7 +41,7 @@ const AddData = () => {
         <>
             {loading ? <Lodor /> :
 
-                <div style={{minHeight:"100vh"}}>
+                <div >
                     <form className='shadow' onSubmit={onsubmitHandler}>
                         <div className="row">
                             <div className="col-lg-8 mb-2">

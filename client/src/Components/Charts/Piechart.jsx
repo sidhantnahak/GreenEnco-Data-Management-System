@@ -21,7 +21,7 @@ const Piechart = () => {
     return (
         <>
             {loading ? <Lodor /> :
-                <div className='chart_main_div'>
+                <div className='chart_main_div pt-1'>
                     <h3 className='text-center mb-3'>Data Representation Using Pie-Chart</h3>
                     
                         {alldata && alldata.length>0&& alldata.map((e) => {
