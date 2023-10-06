@@ -59,7 +59,6 @@ const Dashboard = () => {
             dispatch(getall_data());
         }
     }, [data, error, navigate, dispatch,isUpdated,alert,isDeleted])
-console.log(loading)
     return (
 
         <>
@@ -69,7 +68,7 @@ console.log(loading)
                 <h2 className='text-center'>All Data Sets</h2>
                     {alldata && alldata.length > 0 ? <div style={{ minWidth: "100%", overflowX: "scroll" }} className='p-3 border border-2'>
 
-                        <table id='table' >
+                        <table id='table'  >
                             <thead>
                                 <tr >
                                     <th >#</th>
@@ -90,7 +89,7 @@ console.log(loading)
                                     <th scope="col">AC_loss</th>
                                     <th scope="col">Net_Energy</th>
                                     <th scope="col">Normalised_Energy</th>
-                                    <th scope="col">Action</th>
+                                    <th  scope="col">Action</th>
 
 
                                 </tr>
@@ -154,21 +153,21 @@ console.log(loading)
 
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Delete Data</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLongTitle">Delete Data</h5>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
+      <div className="modal-body text-center">
         <span style={{fontWeight:"600"}} className='text-danger '>Are You Sure Want to Delete This Data</span>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-        <button onClick={()=>dispatch(delete_data(data._id))} type="button" class="btn btn-primary">Delete</button>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Back</button>
+        <button onClick={()=>dispatch(delete_data(data._id))} type="button" className="btn btn-primary">Delete</button>
       </div>
     </div>
   </div>

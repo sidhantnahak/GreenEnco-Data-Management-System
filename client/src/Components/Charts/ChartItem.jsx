@@ -68,11 +68,11 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
     return (
         <>
-            <div className='row justify-content-center align-items-center gap-5 mb-5 '>
+            <div className='row justify-content-center align-items-center gap-5 mb-5 mx-auto '>
                 {type == "Pie" &&
                     <>
-                        <div style={{maxWidth:"400px"}} className=" chart-container col-xl-4 col-12 text-center">
-                            <Pie className=' rounded-lg bg-[whitesmoke]'
+                        <div style={{minWidth:"350px",maxWidth:"500px"}} className="d-flex justify-content-center align-items-center chart-container col-xl-4 col-12 text-center mx-auto">
+                            <Pie className=' rounded-lg bg-[whitesmoke] text-center'
                                 data={chartData}
                                 options={{
                                     plugins: {
@@ -88,8 +88,8 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
                         <h3 className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
 
-                        <div style={{maxWidth:"400px"}} className="chart-container col-xl-4 col-12 text-center">
-                            <Pie className=' rounded-lg bg-[whitesmoke] text-center'
+                        <div style={{minWidth:"350px",maxWidth:"500px"}} className="d-flex justify-content-center align-items-center chart-container col-xl-4 col-12 ">
+                            <Pie className=' rounded-lg bg-[whitesmoke] text-center '
                                 data={chartData2}
                                 options={{
                                     plugins: {
@@ -109,7 +109,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
 {type == "Bar" &&
                     <>
-                        <div className="col-xl-5 col-12 text-center">
+                        <div style={{minWidth:"400px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Bar className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
                                 options={{
@@ -127,7 +127,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
                         <h3 className='col-xl-1 col-12 text-center' >{convertDate(details.date)} </h3>
 
-                        <div className="col-xl-5 col-12 text-center">
+                        <div style={{minWidth:"400px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Bar className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData2}
                                 options={{
@@ -150,7 +150,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
 {type == "Line" &&
                     <>
-                        <div className="col-xl-5 col-12 text-center">
+                        <div style={{minWidth:"350px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Line className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
                                 options={{
@@ -168,7 +168,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
                         <h3 className='col-xl-1 col-12 text-center' >{convertDate(details.date)} </h3>
 
-                        <div className="col-xl-5 col-12 text-center">
+                        <div style={{minWidth:"350px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Line className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData2}
                                 options={{

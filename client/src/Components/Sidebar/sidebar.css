@@ -19,17 +19,23 @@ color: white;
 text-decoration: none;
 
 }
-nav>div{
+nav>a{
+    font-size: 1.3rem;
+    font-weight: 600;
+color: white;
+text-decoration: none;
+
+}
+/* nav>div{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.4rem;
-    margin-bottom: none;
+    gap: 2.4rem; 
 }
 nav div>a{
     color: white;
     text-decoration: none;
-}
+} */
 aside{
     padding: 5rem 1rem 1.5rem;
     width: 250px;

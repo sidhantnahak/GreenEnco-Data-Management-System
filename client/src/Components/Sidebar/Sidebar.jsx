@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './sidebar.css'
 import Main from '../Dashboard/Main'
@@ -7,17 +7,38 @@ import Footer from '../Footer/Footer'
 const Sidebar = () => {
     const [open, setOpen] = useState(true)
 
+    const[width,setWidth]=useState(window.innerWidth)
+    
+   
+ 
+    window.onresize=function(e){
+        setWidth(window.innerWidth)
+    }
+    useEffect(() => {
+        if(width<650 ){
+            setOpen(false)  
+        }else{
+            setOpen(true)
+        }
+        
+       
+    }, [width])
+    
+
 
     return (
 
         <>
             <nav>
-                <li><Link>GreenEnco Pvt. Limited </Link><Link onClick={() => open ? setOpen(false) : setOpen(true)} style={{ position: "relative", top: "3px", left: "7px" }} className={open ? `fa-solid fa-bars` : "fa-solid fa-bars-staggered"}></Link></li>
-                <div>
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/contact">Contact</Link>
+                <li><Link>GreenEnco Pvt. Limited </Link><Link onClick={() => open ? setOpen(false) : setOpen(true)} style={{ position: "relative", top: "3px", left: "7px",display:width>=650?"inline":"none" }} className={open ? `fa-solid fa-bars` : "fa-solid fa-bars-staggered"}></Link></li>
+                <div style={{display:width>=650?"flex":"none",gap:"2rem",justifyContent:"space-between"}} >
+                    <Link className='text-decoration-none text-white fs-7 fw-bolder ' to="/">Home</Link>
+                    <Link className='text-decoration-none text-white fs-7 fw-bolder ' to="/about">About</Link>
+                    <Link className='text-decoration-none text-white fs-7 fw-bolder ' to="/contact">Contact</Link>
                 </div>
+                
+                <Link style={{display:width<650? "block":"none"}} className='fa-solid fa-bars'></Link>
+
             </nav>
 
             <aside style={{ marginLeft: open ? "0px" : "-250px" }}  >

@@ -11,7 +11,6 @@ import Linechart from '../Charts/Linechart'
 const Main = () => {
 
     
- 
     useEffect(() => {
        
     }, [])

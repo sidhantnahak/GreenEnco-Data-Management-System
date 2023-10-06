@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import './footer.css'
 
@@ -8,7 +8,7 @@ const Footer = ({open}) => {
             <div  style={{ width: !open && "100%" }} className='footer_div'>
 
                 <div>
-                    <span className='text-uppercase'>  &#169; 2023 GreenEnco Limited OF INDIA</span>
+                    <span >  &#169; 2023 MADHATTER TECHNOLOGY PRIVATE LIMITED OF INDIA</span>
                     <span > TERMS AND CONDITIONS PRIVACY POLICY/ALL RIGHTS RESERVED  </span>
                 </div>
 
@@ -26,4 +26,4 @@ const Footer = ({open}) => {
     )
 }
 
-export default Footer
+export default memo(Footer)

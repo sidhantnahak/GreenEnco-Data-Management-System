@@ -2,10 +2,12 @@ import React, { memo, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link} from 'react-router-dom';
 import { delete_data, get_data_details } from '../../Redux/dataAction';
+import './adddata.css'
 
 const Data = ({ data, index,convertDate }) => {
     
     const dispatch=useDispatch();
+   
    
 
     useEffect(() => {
@@ -34,11 +36,11 @@ const Data = ({ data, index,convertDate }) => {
                 <td>{data.AC_loss}</td>
                 <td>{data.Net_Energy}</td>
                 <td>{data.Normalised_Energy}</td>
-                <td>
-                    <span id='data_action_links' style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.2rem" }}>
-                        <Link style={style} onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-eye  text-decoration-none fs-4 text-white hover-pulse"data-toggle="modal" data-target="#exampleModalLong" ></Link>
-                        <Link  onClick={()=>dispatch(get_data_details(data._id))}  className="fa-solid fa-pen-to-square text-decoration-none fs-4 text-white" data-toggle="modal" data-target="#exampleModalLong2"></Link>
-                        <Link onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-trash text-decoration-none fs-4 text-white" data-toggle="modal" data-target="#exampleModalCenter"></Link>
+                <td  className='last_column'   >
+                    <span  className='data_action_links' style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.2rem" }}>
+                        <Link  onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-eye  text-decoration-none fs-4  "data-toggle="modal" data-target="#exampleModalLong" ></Link>
+                        <Link  onClick={()=>dispatch(get_data_details(data._id))}  className="fa-solid fa-pen-to-square text-decoration-none fs-4 " data-toggle="modal" data-target="#exampleModalLong2"></Link>
+                        <Link onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-trash text-decoration-none fs-4 " data-toggle="modal" data-target="#exampleModalCenter"></Link>
                     </span>
                 </td>
             </tr>
