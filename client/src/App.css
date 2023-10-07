@@ -9,3 +9,7 @@ a:hover{
   text-decoration: none;
 }
 .modal-backdrop {display: none;}
+a{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

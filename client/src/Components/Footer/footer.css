@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: rgb(43 50 66);
     padding: 0.5rem 1rem;
   float: right;
     margin-top: 5rem;
@@ -23,7 +23,7 @@
     text-align: center;
 }
 .footer_div>:last-child{
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 1.2rem;

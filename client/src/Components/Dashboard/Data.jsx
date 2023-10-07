@@ -8,9 +8,10 @@ const Data = ({ data, index,convertDate }) => {
     
     const dispatch=useDispatch();
    
-   
+  
 
     useEffect(() => {
+      
       
     }, [dispatch])
     
@@ -36,7 +37,7 @@ const Data = ({ data, index,convertDate }) => {
                 <td>{data.AC_loss}</td>
                 <td>{data.Net_Energy}</td>
                 <td>{data.Normalised_Energy}</td>
-                <td  className='last_column'   >
+                <td  id='last_column'   >
                     <span  className='data_action_links' style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.2rem" }}>
                         <Link  onClick={()=>dispatch(get_data_details(data._id))} className="fa-solid fa-eye  text-decoration-none fs-4  "data-toggle="modal" data-target="#exampleModalLong" ></Link>
                         <Link  onClick={()=>dispatch(get_data_details(data._id))}  className="fa-solid fa-pen-to-square text-decoration-none fs-4 " data-toggle="modal" data-target="#exampleModalLong2"></Link>

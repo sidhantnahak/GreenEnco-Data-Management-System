@@ -1,10 +1,11 @@
 nav{
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1.5rem;
-    background-color: rgb(49, 44, 44);
+    /* background-color: rgb(49, 44, 44); */
+    background-color:     rgb(43 50 66);
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -13,7 +14,7 @@ li{
     list-style: none;
 }
 nav>li>a{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
 color: white;
 text-decoration: none;
@@ -37,6 +38,8 @@ nav div>a{
     text-decoration: none;
 } */
 aside{
+    
+    background-color:rgb(43 50 66) ;
     padding: 5rem 1rem 1.5rem;
     width: 250px;
     display: flex;
@@ -45,13 +48,14 @@ aside{
     flex-direction: column;
     position: fixed;
     min-height: 100vh;
-    box-shadow: 1px 1px 5px  rgb(49, 44, 44);
+    /* box-shadow: 1px 1px 5px  rgb(49, 44, 44); */
     transition: .5s all;
 }
 aside>a{
     text-decoration: none;
     font-size: 1.2rem;
     color: black;
+    color: white;
     font-weight: 600;
 }
 
