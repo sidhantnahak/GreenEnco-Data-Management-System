@@ -8,6 +8,7 @@ import Barchart from '../Charts/Barchart'
 import Linechart from '../Charts/Linechart'
 import Contact from '../Home/Contact'
 import About from '../Home/About'
+import Notfound from '../Lodor/Notfound'
 
 
 const Main = () => {
@@ -28,6 +29,7 @@ const Main = () => {
                  <Route path={`/chart/pie-chart`} element={< Piechart/>} />
                  <Route path={`/chart/Bar-chart`} element={< Barchart/>} />
                  <Route path={`/chart/Line-chart`} element={< Linechart/>} />
+                 <Route path={`*`} element={< Notfound/>} />
 
             </Routes>
         </>

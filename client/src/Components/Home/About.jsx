@@ -8,7 +8,7 @@ const About = () => {
             <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
 
-                <h1 style={{ fontWeight: "700" }} className='mx-auto text-center text-2xl text-black '>Ambula Technologies Private Limited</h1>
+                <h1 style={{ fontWeight: "700" }} className='mx-auto text-center text-2xl text-black '>GreenEnco Limited</h1>
                 <figure className="mt-5">
                     <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
                         <p >

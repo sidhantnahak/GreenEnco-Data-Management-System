@@ -22,7 +22,7 @@ const Linechart = () => {
         <>
             {loading ? <Lodor /> :
                 <div className='chart_main_div'>
-                    <h3 className='text-center'>Data Representation Using Line-Chart</h3>
+                    <h3 className='text-center mb-4'>Data Representation Using Line-Chart</h3>
                     
                         {alldata && alldata.length>0&& alldata.map((e) => {
                             return <ChartItem key={e._id} details={e} label1={label1} label2={label2} type={"Line"} />

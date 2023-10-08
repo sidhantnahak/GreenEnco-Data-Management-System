@@ -6,6 +6,22 @@ Chart.register(CategoryScale)
 
 const ChartItem = ({ details, label1, label2, type }) => {
 
+
+    const [width, setWidth] = useState(window.innerWidth)
+    const [topHeading,settopHeding]=useState(false);
+
+
+    window.onresize = function (e) {
+        setWidth(window.innerWidth)
+        
+    }
+  useEffect(() => {
+    // if(width<1200){
+    //     settopHeding(true);
+    // }
+  }, [width])
+  
+
     const [chartData, setChartData] = useState({
 
         labels: label1.map((data) => data),
@@ -64,13 +80,13 @@ const ChartItem = ({ details, label1, label2, type }) => {
     useEffect(() => {
 
     }, [])
-
-
     return (
         <>
-            <div className='row justify-content-center align-items-center gap-5 mb-5 mx-auto '>
+            <div className='row justify-content-center align-items-center gap-4 mb-5 mx-auto '>
                 {type == "Pie" &&
                     <>
+                        <h3 style={{display:width<1200?"block":"none"}} className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
+
                         <div style={{minWidth:"350px",maxWidth:"500px"}} className="d-flex justify-content-center align-items-center chart-container col-xl-4 col-12 text-center mx-auto">
                             <Pie className=' rounded-lg bg-[whitesmoke] text-center'
                                 data={chartData}
@@ -86,7 +102,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
                             />
                         </div>
 
-                        <h3 className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
+                        <h3 style={{display:width>=1200?"block":"none"}} className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
 
                         <div style={{minWidth:"350px",maxWidth:"500px"}} className="d-flex justify-content-center align-items-center chart-container col-xl-4 col-12 ">
                             <Pie className=' rounded-lg bg-[whitesmoke] text-center '
@@ -109,6 +125,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
 {type == "Bar" &&
                     <>
+                     <h3 style={{display:width<1200?"block":"none"}} className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
                         <div style={{minWidth:"400px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Bar className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
@@ -125,7 +142,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
                             />
                         </div>
 
-                        <h3 className='col-xl-1 col-12 text-center' >{convertDate(details.date)} </h3>
+                        <h3 style={{display:width>=1200?"block":"none"}} className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
 
                         <div style={{minWidth:"400px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Bar className=' rounded-lg bg-[whitesmoke]'
@@ -150,6 +167,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
 
 {type == "Line" &&
                     <>
+                     <h3 style={{display:width<1200?"block":"none"}} className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
                         <div style={{minWidth:"350px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Line className=' rounded-lg bg-[whitesmoke]'
                                 data={chartData}
@@ -166,7 +184,7 @@ const ChartItem = ({ details, label1, label2, type }) => {
                             />
                         </div>
 
-                        <h3 className='col-xl-1 col-12 text-center' >{convertDate(details.date)} </h3>
+                        <h3 style={{display:width>=1200?"block":"none"}} className='col-xl-1 col-12  text-center' >{convertDate(details.date)} </h3>
 
                         <div style={{minWidth:"350px",maxWidth:"500px"}}className="col-xl-5 col-12 d-flex justify-content-center align-items-center">
                             <Line className=' rounded-lg bg-[whitesmoke]'
