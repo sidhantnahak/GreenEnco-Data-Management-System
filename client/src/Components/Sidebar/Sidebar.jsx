@@ -60,7 +60,7 @@ const Sidebar = () => {
                 <Link onClick={navLinkHandler} style={{ display: width < 650 ? "block" : "none" }} className={dropdown ? "fa-solid fa-xmark" : 'fa-solid fa-bars'}></Link>
 
             </nav>
-            <div id='open_links' onClick={(e) => e.stopPropagation()} style={{ width: width < 400 ? "unset" : "auto", display: dropdown ? "flex" : "none", position: "fixed", top: "65px", right: "5px", left: width < 400 && "5px", background: "rgb(43 50 66)", color: "white",fontSize:"0.9rem" }} className='px-5 py-1 gap-3 rounded align-items-center justify-content-center'>
+            <div id='open_links' onClick={(e) => e.stopPropagation()} style={{ width: width < 400 ? "unset" : "auto", display: dropdown ? "flex" : "none", position: "fixed", top: "65px", right: "5px", left: width < 400 && "5px", background: "rgb(43 50 66)", color: "white" }} className='px-5 py-1 gap-3 rounded align-items-center justify-content-center'>
                 <ul className='d-flex flex-column py-2 gap-1 align-items-center justify-content-center text-center'>
                     <Link to="/" className='text-white mt-1 text-decoration-none font-weight-bold' style={{ fontWeight: "600" }}>Home</Link>
                     <Link to="/about" className='text-white mt-1 text-decoration-none font-weight-bold' style={{ fontWeight: "600" }}>About</Link>

@@ -54,7 +54,7 @@ const dataSchema=new mongoose.Schema({
         required:true
     },
     Actual_Export_Energy:{
-        type:Number,
+        type:Number,    
         required:true
     },
     Actual_Import_Energy:{

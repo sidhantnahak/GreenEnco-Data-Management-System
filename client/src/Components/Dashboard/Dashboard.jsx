@@ -81,16 +81,16 @@ const Dashboard = () => {
                                             <th scope="col">Contractual_Energy</th>
                                             <th scope="col">Actual_GTI</th>
                                             <th scope="col">Actual_GHI</th>
-                                            <th scope="col">PVSyst_GTI_Actual_GTI</th>
-                                            <th scope="col">PVSyst_GHI_Actual_GHI</th>
-                                            <th scope="col">PVSyst_Energy_Contractual_Energy</th>
-                                            <th scope="col">T_Cell_Avg</th>
-                                            <th scope="col">Actual_Inverter_Energy</th>
-                                            <th scope="col">Actual_Export_Energy</th>
-                                            <th scope="col">Actual_Import_Energy</th>
-                                            <th scope="col">AC_loss</th>
+                                            <th scope="col">PVSyst_GTI_vs_Actual_GTI</th>
+                                            <th scope="col">PVSyst_GHI_vs_Actual_GHI</th>
+                                            <th scope="col">PVSyst_Energy_vs_Contractual_Energy</th>
+                                            <th scope="col">T_Cell_Avg(C)</th>
+                                            <th scope="col">Actual_Inverter_Energy (KWH)</th>
+                                            <th scope="col">Actual_Export_Energy (KWH)</th>
+                                            <th scope="col">Actual_Import_Energy (KWH)</th>
+                                            <th scope="col">AC_loss(%)</th>
                                             <th scope="col">Net_Energy</th>
-                                            <th scope="col">Normalised_Energy</th>
+                                            <th scope="col">Normalised_Energy (KWH)</th>
                                             <th scope="col">Action</th>
 
 

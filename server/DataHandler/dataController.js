@@ -4,7 +4,6 @@ const router = express.Router();
 const Data = require('./newDataSchema');
 const { addDataValidation } = require('./data.validation');
 
-!
     router.post('/add-data', addDataValidation, async (req, res) => {
 
         try {
@@ -101,9 +100,6 @@ router.delete('/data/:id',  async (req, res) => {
 
     }
 })
-
-
-
 
 
 

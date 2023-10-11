@@ -8,7 +8,7 @@ const Footer = ({open}) => {
             <div  style={{ width: !open && "100%" }} className='footer_div'>
 
                 <div>
-                    <span >  &#169; 2023 MADHATTER TECHNOLOGY PRIVATE LIMITED OF INDIA</span>
+                    <span >  &#169; 2023 GreenEnco LIMITED OF INDIA</span>
                     <span > TERMS AND CONDITIONS PRIVACY POLICY/ALL RIGHTS RESERVED  </span>
                 </div>
 
